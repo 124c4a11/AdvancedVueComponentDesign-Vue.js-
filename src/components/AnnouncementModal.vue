@@ -19,12 +19,29 @@
 <script>
 export default {
   props: {
-    show: { type: Boolean }
+    show: { type: Boolean },
+    preventBackgroundScrolling: { default: true }
   },
 
   methods: {
     dismiss () {
       this.$emit('close')
+    }
+  },
+
+  watch: {
+    show: {
+      immediate: true,
+
+      handler: function (show) {
+        if (show) {
+          this.preventBackgroundScrolling &&
+            document.body.style.setProperty('overflow', 'hidden')
+        } else {
+          this.preventBackgroundScrolling &&
+            document.body.style.removeProperty('overflow')
+        }
+      }
     }
   },
 
