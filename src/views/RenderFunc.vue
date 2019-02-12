@@ -1,7 +1,11 @@
 <template>
   <div class="min-h-screen bg-grey-lighter p-8">
     <div class="text-center p-8 my-8">
-      <render tag="button"></render>
+      <render>
+        <h1 slot-scope="{ subject }">
+          Hello {{ subject }}!
+        </h1>
+      </render>
     </div>
   </div>
 </template>
