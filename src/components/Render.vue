@@ -1,26 +1,25 @@
 <script>
+import ToggleInput from './ToggleInput.vue'
+
 export default {
-  props: ['tag'],
+  props: [],
 
   data () {
-    return {}
+    return {
+      toggled: true
+    }
   },
 
   render (createElement) {
-    return createElement(
-      this.tag,
-
-      {
-        attrs: {
-          class: 'btn btn-blue'
-        },
-        on: {
-          click: () => alert('Clicked!')
-        }
+    return createElement(ToggleInput, {
+      props: {
+        value: this.toggled
       },
 
-      'Render text'
-    )
+      on: {
+        input: (newValue) => (this.toggled = newValue)
+      }
+    })
   }
 }
 </script>

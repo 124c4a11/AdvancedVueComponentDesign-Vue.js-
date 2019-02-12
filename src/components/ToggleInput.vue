@@ -1,23 +1,18 @@
 <template>
   <span class="toggle" role="checkbox" tabindex="0"
-    @click='toggle'
-    @keydown.space.prevent='toggle'
-    :aria-checked='toggler.toString()'
+    @click="toggle"
+    @keydown.space.prevent="toggle"
+    :aria-checked="value.toString()"
   ></span>
 </template>
 
 <script>
 export default {
-  props: ['toggler'],
-
-  model: {
-    prop: 'toggler',
-    event: 'toggle'
-  },
+  props: ['value'],
 
   methods: {
     toggle () {
-      this.$emit('toggle', !this.toggler)
+      this.$emit('input', !this.value)
     }
   }
 }
