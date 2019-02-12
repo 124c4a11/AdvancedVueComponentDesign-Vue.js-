@@ -5,6 +5,7 @@ import SettingsForm from './views/SettingsForm.vue'
 import DatePicker from './views/DatePicker.vue'
 import AnnouncementModal from './views/AnnouncementModal.vue'
 import MediaCards from './views/MediaCards.vue'
+import ContactList from './views/ContactList.vue'
 
 Vue.use(Router)
 
@@ -31,6 +32,11 @@ export default new Router({
       path: '/media-cards',
       name: 'media-cards',
       component: MediaCards
+    },
+    {
+      path: '/contact-list',
+      name: 'contact-list',
+      component: ContactList
     }
   ]
 })

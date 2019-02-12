@@ -4,7 +4,8 @@
       <router-link to="/">UserSettingsForm</router-link> |
       <router-link to="/datepicker">Datepicker</router-link> |
       <router-link to="/announcement-modal">AnnouncementModal</router-link> |
-      <router-link to="/media-cards">MediaCards</router-link>
+      <router-link to="/media-cards">MediaCards</router-link> |
+      <router-link to="/contact-list">ContactList</router-link>
     </div>
     <router-view/>
   </div>
