@@ -6,6 +6,7 @@ import DatePicker from './views/DatePicker.vue'
 import AnnouncementModal from './views/AnnouncementModal.vue'
 import MediaCards from './views/MediaCards.vue'
 import ContactList from './views/ContactList.vue'
+import RenderFunc from './views/RenderFunc.vue'
 
 Vue.use(Router)
 
@@ -37,6 +38,11 @@ export default new Router({
       path: '/contact-list',
       name: 'contact-list',
       component: ContactList
+    },
+    {
+      path: '/render-function',
+      name: 'render-funcion',
+      component: RenderFunc
     }
   ]
 })
