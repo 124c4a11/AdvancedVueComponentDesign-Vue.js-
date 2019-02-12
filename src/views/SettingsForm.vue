@@ -2,16 +2,16 @@
   <div>
     <div class="min-h-screen bg-grey-darker p-8">
       <div class="max-w-sm mx-auto">
-        <user-settings-form :account-id="accountId"/>
+        <user-settings-form :account-id="accountId"></user-settings-form>
       </div>
     </div>
 
-    <portal to="modals" v-if="showAnnouncement">
+    <div class="opacity-25">
       <announcement-modal
         :show="showAnnouncement"
         @close="showAnnouncement = false"
-      ></announcement-modal>
-    </portal>
+      />
+    </div>
 
     <portal-target name="modals"></portal-target>
   </div>
@@ -30,7 +30,7 @@ export default {
   data () {
     return {
       accountId: 7,
-      showAnnouncement: false
+      showAnnouncement: true
     }
   }
 }

@@ -14,10 +14,14 @@
       </div>
     </div>
 
-    <announcement-modal
-      :show="modalOpen"
-      @close="modalOpen = false"
-    ></announcement-modal>
+    <div class="opacity-25">
+      <announcement-modal
+        :show="modalOpen"
+        @close="modalOpen = false"
+      ></announcement-modal>
+    </div>
+
+    <portal-target name="modals"></portal-target>
   </div>
 </template>
 
