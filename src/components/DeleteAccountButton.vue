@@ -2,9 +2,8 @@
   <button
     @click="confirmDeleteModalOpen = true"
     type="button"
-    class="text-red-dark hover:underline"
   >
-    Delete Account
+    <slot/>
     <portal to="modals" v-if="confirmDeleteModalOpen">
       <confirm-delete-modal
         :show="confirmDeleteModalOpen"

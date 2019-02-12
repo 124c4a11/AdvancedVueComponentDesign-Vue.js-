@@ -13,7 +13,13 @@
       </div>
     </div>
     <div class="flex justify-between">
-      <delete-account-button :account-id="accountId"></delete-account-button>
+      <delete-account-button
+        class="btn btn-red btn-with-icon"
+        :account-id="accountId"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M6 2l2-2h4l2 2h4v2H2V2h4zM3 6h14l-1 14H4L3 6zm5 2v10h1V8H8zm3 0v10h1V8h-1z"/></svg>
+        Cancel Account
+      </delete-account-button>
       <button type="button" class="btn btn-blue">Update Settings</button>
     </div>
   </div>
