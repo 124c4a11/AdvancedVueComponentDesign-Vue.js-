@@ -1,25 +1,33 @@
 <script>
-import ToggleInput from './ToggleInput.vue'
+import contacts from "@/../public/data/contacts.json"
 
 export default {
   props: [],
 
   data () {
-    return {
-      toggled: true
-    }
+    return { contacts }
   },
 
   render (createElement) {
-    return createElement(ToggleInput, {
-      props: {
-        value: this.toggled
-      },
+    return createElement('div', {}, [
+      createElement('h1', {}, 'Your Contacts'),
 
-      on: {
-        input: (newValue) => (this.toggled = newValue)
-      }
-    })
+      createElement(
+        'ul',
+
+        {},
+
+        this.contacts.map((contact) => {
+          return createElement(
+            'li',
+
+            {},
+
+            `${contact.name.first} ${contact.name.last}`
+          )
+        })
+      )
+    ])
   }
 }
 </script>
