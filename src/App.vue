@@ -3,7 +3,8 @@
     <div id="nav">
       <router-link to="/">UserSettingsForm</router-link> |
       <router-link to="/datepicker">Datepicker</router-link> |
-      <router-link to="/announcement-modal">AnnouncementModal</router-link>
+      <router-link to="/announcement-modal">AnnouncementModal</router-link> |
+      <router-link to="/media-cards">MediaCards</router-link>
     </div>
     <router-view/>
   </div>

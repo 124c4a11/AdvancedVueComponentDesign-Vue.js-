@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+
 import SettingsForm from './views/SettingsForm.vue'
 import DatePicker from './views/DatePicker.vue'
 import AnnouncementModal from './views/AnnouncementModal.vue'
+import MediaCards from './views/MediaCards.vue'
 
 Vue.use(Router)
 
@@ -24,6 +26,11 @@ export default new Router({
       path: '/announcement-modal',
       name: 'announcement-modal',
       component: AnnouncementModal
+    },
+    {
+      path: '/media-cards',
+      name: 'media-cards',
+      component: MediaCards
     }
   ]
 })

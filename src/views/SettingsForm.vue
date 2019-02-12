@@ -30,7 +30,7 @@ export default {
   data () {
     return {
       accountId: 7,
-      showAnnouncement: true
+      showAnnouncement: false
     }
   }
 }
