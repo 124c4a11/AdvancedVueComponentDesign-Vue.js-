@@ -48,6 +48,7 @@ export default {
     return this.$scopedSlots.default({
       tags: this.tags,
       removeTag: this.removeTag,
+      addTag: this.addTag,
 
       inputProps: {
         value: this.input
