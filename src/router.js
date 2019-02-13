@@ -7,6 +7,7 @@ import AnnouncementModal from './views/AnnouncementModal.vue'
 import MediaCards from './views/MediaCards.vue'
 import ContactList from './views/ContactList.vue'
 import RenderFunc from './views/RenderFunc.vue'
+import TagInput from './views/TagInput.vue'
 
 Vue.use(Router)
 
@@ -43,6 +44,11 @@ export default new Router({
       path: '/render-function',
       name: 'render-funcion',
       component: RenderFunc
+    },
+    {
+      path: '/tag-input',
+      name: 'tag-input',
+      component: TagInput
     }
   ]
 })
