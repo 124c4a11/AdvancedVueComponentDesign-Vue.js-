@@ -2,10 +2,14 @@
   <div id="app" class="min-h-screen bg-grey-darker p-8">
     <div class="max-w-sm mx-auto card mt-8">
       <label class="form-label mb-2">Renderless Tag Input</label>
-      <renderless-tag-input>
-        <div class="tag-input" slot-scope="{}">
-          <span class="tag-input-tag">
-            <span>sample tag</span>
+      <renderless-tag-input v-model="tags">
+        <div class="tag-input" slot-scope="{ tags }">
+          <span
+            v-for="tag in tags"
+            :key="tag"
+            class="tag-input-tag"
+          >
+            <span>{{ tag }}</span>
             <button type="button" class="tag-input-remove">&times;</button>
           </span>
           <input class="tag-input-text" placeholder="Add tag...">
