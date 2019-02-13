@@ -9,7 +9,8 @@
       <router-link to="/render-function">RenderFunction</router-link> |
       <router-link to="/tag-input">TagInput</router-link> |
       <router-link to="/profile-card">ProfileCard</router-link> |
-      <router-link to="/accordion">Accordion</router-link>
+      <router-link to="/accordion">Accordion</router-link> |
+      <router-link to="/sortable-list">SortableList</router-link>
     </div>
     <router-view/>
   </div>

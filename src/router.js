@@ -10,6 +10,7 @@ import RenderFunc from './views/RenderFunc.vue'
 import TagInput from './views/TagInput.vue'
 import ProfileCard from './views/ProfileCard.vue'
 import Accordion from './views/Accordion.vue'
+import SortableList from './views/SortableList.vue'
 
 Vue.use(Router)
 
@@ -61,6 +62,11 @@ export default new Router({
       path: '/accordion',
       name: 'accordion',
       component: Accordion
+    },
+    {
+      path: '/sortable-list',
+      name: 'sortable-list',
+      component: SortableList
     }
   ]
 })
