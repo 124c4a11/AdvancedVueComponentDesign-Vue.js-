@@ -6,15 +6,18 @@
     </button>
 
     <div v-show="isOpen" class="search-select-dropdown">
-      <input class="search-select-search">
-      <ul class="search-select-options">
+      <input v-model="search" class="search-select-search">
+
+      <ul v-show="filteredOptions.length > 0" class="search-select-options">
         <li class="search-select-option"
-          v-for="option in options"
+          v-for="option in filteredOptions"
           :key="option"
           @click="select(option)"
         >{{ option }}</li>
       </ul>
-      <!-- <div class="search-select-empty">No results found</div> -->
+      <div v-show="filteredOptions.length === 0"  class="search-select-empty">
+        No results found
+      </div>
     </div>
   </div>
 </template>
@@ -25,6 +28,7 @@ export default {
     return {
       isOpen: false,
       value: null,
+      search: '',
 
       options: [
         'Anthrax',
@@ -44,6 +48,14 @@ export default {
     }
   },
 
+  computed: {
+    filteredOptions () {
+      return this.options.filter((option) =>
+        option.toLowerCase().startsWith(this.search.toLowerCase())
+      )
+    }
+  },
+
   methods: {
     open () {
       this.isOpen = true
@@ -55,6 +67,7 @@ export default {
 
     select (option) {
       this.value = option
+      this.search = ''
       this.close()
     }
   }
