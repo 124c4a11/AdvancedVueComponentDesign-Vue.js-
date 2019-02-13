@@ -11,6 +11,7 @@ import TagInput from './views/TagInput.vue'
 import ProfileCard from './views/ProfileCard.vue'
 import Accordion from './views/Accordion.vue'
 import SortableList from './views/SortableList.vue'
+import SearchSelect from './views/SearchSelect.vue'
 
 Vue.use(Router)
 
@@ -67,6 +68,11 @@ export default new Router({
       path: '/sortable-list',
       name: 'sortable-list',
       component: SortableList
+    },
+    {
+      path: '/search-select',
+      name: 'search-select',
+      component: SearchSelect
     }
   ]
 })
