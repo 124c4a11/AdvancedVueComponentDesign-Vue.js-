@@ -8,6 +8,7 @@ import MediaCards from './views/MediaCards.vue'
 import ContactList from './views/ContactList.vue'
 import RenderFunc from './views/RenderFunc.vue'
 import TagInput from './views/TagInput.vue'
+import ProfileCard from './views/ProfileCard.vue'
 
 Vue.use(Router)
 
@@ -49,6 +50,11 @@ export default new Router({
       path: '/tag-input',
       name: 'tag-input',
       component: TagInput
+    },
+    {
+      path: '/profile-card',
+      name: 'profile-card',
+      component: ProfileCard
     }
   ]
 })
