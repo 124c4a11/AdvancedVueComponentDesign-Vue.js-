@@ -9,6 +9,7 @@ import ContactList from './views/ContactList.vue'
 import RenderFunc from './views/RenderFunc.vue'
 import TagInput from './views/TagInput.vue'
 import ProfileCard from './views/ProfileCard.vue'
+import Accordion from './views/Accordion.vue'
 
 Vue.use(Router)
 
@@ -55,6 +56,11 @@ export default new Router({
       path: '/profile-card',
       name: 'profile-card',
       component: ProfileCard
+    },
+    {
+      path: '/accordion',
+      name: 'accordion',
+      component: Accordion
     }
   ]
 })
