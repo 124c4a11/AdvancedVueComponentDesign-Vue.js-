@@ -11,6 +11,7 @@
     "@shopify/draggable": "^1.0.0-beta.8",
     "element-resize-detector": "^1.1.15",
     "pikaday": "^1.8.0",
+    "popper.js": "^1.14.7",
     "portal-vue": "^1.5.1",
     "vue": "^2.5.22",
     "vue-router": "^3.0.1"

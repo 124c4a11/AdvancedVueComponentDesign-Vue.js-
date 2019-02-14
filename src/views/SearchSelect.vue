@@ -1,5 +1,7 @@
 <template>
-  <div class="font-sans text-black min-h-screen bg-grey-darker p-8">
+  <div
+    class="font-sans text-black min-h-screen bg-grey-darker p-8" style="padding-top: 14rem; padding-bottom: 14rem"
+  >
     <div class="max-w-sm mx-auto bg-white rounded shadow-lg p-8">
       <div class="mb-4">
         <label class="form-label mb-2">Favorite Thrash Band</label>
