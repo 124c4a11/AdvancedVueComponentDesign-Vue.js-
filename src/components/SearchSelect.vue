@@ -6,13 +6,28 @@
     </button>
 
     <div v-show="isOpen" class="search-select-dropdown">
-      <input ref="search" v-model="search" class="search-select-search">
+      <input
+        v-model="search"
+        ref="search"
+        @keydown.esc="close"
+        @keydown.up="highlightPrev"
+        @keydown.down="highlightNext"
+        @keydown.enter.prevent="selectHighlighted"
+        @keydown.tab.prevent
+        class="search-select-search"
+      >
 
-      <ul v-show="filteredOptions.length > 0" class="search-select-options">
-        <li class="search-select-option"
-          v-for="option in filteredOptions"
+      <ul
+        v-show="filteredOptions.length > 0"
+        ref="options"
+        class="search-select-options"
+      >
+        <li
+          v-for="(option, i) in filteredOptions"
           :key="option"
           @click="select(option)"
+          :class="{ 'is-active': i === highlightedIndex}"
+          class="search-select-option"
         >{{ option }}</li>
       </ul>
       <div v-show="filteredOptions.length === 0"  class="search-select-empty">
@@ -29,7 +44,8 @@ export default {
   data () {
     return {
       isOpen: false,
-      search: ''
+      search: '',
+      highlightedIndex: 0
     }
   },
 
@@ -41,9 +57,13 @@ export default {
 
   methods: {
     open () {
+      if (this.isOpen) return
+
       this.isOpen = true
+
       this.$nextTick(() => {
         this.$refs.search.focus()
+        this.scrollToHighlighted()
       })
     },
 
@@ -55,7 +75,40 @@ export default {
     select (option) {
       this.$emit('input', option)
       this.search = ''
+      this.highlightedIndex = 0
       this.close()
+    },
+
+    selectHighlighted () {
+      this.select(this.filteredOptions[this.highlightedIndex])
+    },
+
+    scrollToHighlighted () {
+      this.$refs.options.children[this.highlightedIndex].scrollIntoView({
+        block: 'nearest'
+      })
+    },
+
+    highlight (index) {
+      this.highlightedIndex = index
+
+      if (this.highlightedIndex < 0) {
+        this.highlightedIndex = this.filteredOptions.length - 1
+      }
+
+      if (this.highlightedIndex > this.filteredOptions.length - 1) {
+        this.highlightedIndex = 0
+      }
+
+      this.scrollToHighlighted()
+    },
+
+    highlightPrev () {
+      this.highlight(this.highlightedIndex - 1)
+    },
+
+    highlightNext () {
+      this.highlight(this.highlightedIndex + 1)
     }
   }
 }
